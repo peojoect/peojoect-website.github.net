@@ -5,122 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Granget Gadgets Shop</title>
     <style>
-        * {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    min-height: 100vh;
 }
 
 header {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 123, 255, 0.3);
+    color: #00d4ff;
+    padding: 1.5rem;
     text-align: center;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
 header h1 {
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px #00d4ff;
+    font-weight: 700;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    justify-content: space-evenly;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
 }
 
 nav a {
-    color: white;
+    color: #00d4ff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #00d4ff, #0099cc);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00d4ff;
 }
 
 main {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 0 1rem;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #007bff;
+    color: #00d4ff;
+    text-shadow: 0 0 15px #00d4ff;
+    font-weight: 700;
 }
-
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
 .product-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 123, 255, 0.2);
     overflow: hidden;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00d4ff, #0099cc);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4), 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
 .product-card img {
-    width: auto;
+    width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .product-card h3 {
     margin: 1rem 0 0.5rem;
+    color: #ffffff;
+    font-weight: 500;
 }
 
 .product-card p {
-    font-size: 1.2rem;
-    color: #007bff;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #00d4ff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .product-card button {
-    background-color: #28a745;
-    color: white;
+    background: linear-gradient(90deg, #00d4ff, #0099cc);
+    color: #ffffff;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 .product-card button:hover {
-    background-color: #218838;
+    background: linear-gradient(90deg, #0099cc, #007bff);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    transform: scale(1.05);
 }
 
+/* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background: rgba(0, 0, 0, 0.9);
+    color: #cccccc;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0, 123, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
+        gap: 1rem;
     }
     
     .product-grid {
         grid-template-columns: 1fr;
     }
-
+    
+    header {
+        padding: 1rem;
+    }
+    
+    main {
+        margin: 2rem auto;
+    }
 }
     </style>
 </head>
@@ -173,4 +238,5 @@ footer {
 </body>
 
 </html>
+
 
